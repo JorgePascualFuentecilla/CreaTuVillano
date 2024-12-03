@@ -1,4 +1,4 @@
-import Modelo from '../../models/modelo.js';
+import Modelo from '../../models/monstruos.js';
 
 function getAll(){
     
