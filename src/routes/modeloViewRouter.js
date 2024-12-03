@@ -4,7 +4,7 @@ import ModeloViewController from '../controllers/modelo/modeloViewController.js'
 const router = Router();
 
 router.get('/', ModeloViewController.getAll);
-...
-router.post('/', ModeloViewController.createNew);
-...
+
+//router.post('/', ModeloViewController.createNew);
+
 export default router;

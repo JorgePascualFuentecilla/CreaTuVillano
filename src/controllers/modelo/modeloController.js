@@ -1,10 +1,10 @@
 import Modelo from '../../models/modelo.js';
 
-const getAll(){
-    ...
+function getAll(){
+    
 }
-...
+
 export default {
     getAll,
-    ...
+    
 }

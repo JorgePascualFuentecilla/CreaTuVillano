@@ -6,5 +6,5 @@ const router = Router();
 
 router.use('/api/modelo', modeloApiRouter);
 router.use('/modelo', modeloViewRouter);
-...
+
 export default router;

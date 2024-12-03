@@ -4,7 +4,7 @@ import ModeloApiController from '../controllers/modelo/modeloApiController.js';
 const router = Router();
 
 router.get('/', ModeloApiController.getAll);
-...
-router.post('/', ModeloApiController.createNew);
-...
+
+//router.post('/', ModeloApiController.createNew);
+
 export default router;
