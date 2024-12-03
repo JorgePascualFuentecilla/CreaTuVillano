@@ -11,6 +11,6 @@ services:
         ports:
             - ${DB_PORT}:3306
         volumes:
-#            - ./mySQL/scripts:/docker-entrypoint-initdb.d:ro
+            - ./mySQL/scripts:/docker-entrypoint-initdb.d:ro
             - ./mySQL/conf/mycustom.cnf:/etc/mysql/conf.d/custom.cnf:ro
             - /var/lib/mysql
