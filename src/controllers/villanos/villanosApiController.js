@@ -1,4 +1,4 @@
-import ModeloController from './modeloController.js';
+import villanosController from './villanosController.js';
 
 const getAll = async (req, res) => {
     
