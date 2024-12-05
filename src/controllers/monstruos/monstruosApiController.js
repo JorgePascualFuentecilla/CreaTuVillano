@@ -1,11 +1,13 @@
-import userController from "./userController.js"
+
+import monstruosController from "./monstruosController.js"
 async function getAll(req, res) {
-    const villanos = await userController.getAll()
-    res.json (villanos);
+    const monstruos = await monstruosController.getAll()
+    res.json (monstruos);
 }
-async function getById(id) {
-    const user = await villanos.findByPk(id);
-    return user;
+async function getById(req,res) {
+    const id = req.params.id;
+    const user = await monstruosController.getById(id);
+    res.json ( user);
 }
 
 /*async function create(username, email, password) {
@@ -13,7 +15,7 @@ async function getById(id) {
     if(oldUser){
         throw new error.EMAIL_ALREADY_EXISTS;
     }
-    const newUser = await villanos.create({
+    const newUser = await monstruos.create({
         username,
         email,
         password         
@@ -24,7 +26,7 @@ async function getById(id) {
 
 
 /*async function update(id, username, email, rol,password=null) {
-    const user = await villanos.findByPk(id);
+    const user = await monstruos.findByPk(id);
 
     user.username = username;
     user.email = email;
@@ -36,7 +38,7 @@ async function getById(id) {
 }*/
 
 /*async function remove(id) {
-    const userToRemove = await villanos.findByPk(id);
+    const userToRemove = await monstruos.findByPk(id);
     await userToRemove.destroy();
     return userToRemove;
 }*/
@@ -49,5 +51,4 @@ export const functions = {
     // update,
     // remove
 }
-export default functions;
-
+export default functions

@@ -1,11 +1,11 @@
-import villanos from '../models/villanos.js'
-import error from '../helpers/errors.js';
+import monstruos from '../../models/monstruos.js';
+import error from '../../helpers/errors.js';
 async function getAll() {
-    const users = await villanos.findAll()
+    const users = await monstruos.findAll()
     return users;
 }
 async function getById(id) {
-    const user = await villanos.findByPk(id);
+    const user = await monstruos.findByPk(id);
     return user;
 }
 
@@ -14,7 +14,7 @@ async function getById(id) {
     if(oldUser){
         throw new error.EMAIL_ALREADY_EXISTS;
     }
-    const newUser = await villanos.create({
+    const newUser = await monstruos.create({
         username,
         email,
         password         
@@ -25,7 +25,7 @@ async function getById(id) {
 
 
 /*async function update(id, username, email, rol,password=null) {
-    const user = await villanos.findByPk(id);
+    const user = await monstruos.findByPk(id);
 
     user.username = username;
     user.email = email;
@@ -37,7 +37,7 @@ async function getById(id) {
 }*/
 
 /*async function remove(id) {
-    const userToRemove = await villanos.findByPk(id);
+    const userToRemove = await monstruos.findByPk(id);
     await userToRemove.destroy();
     return userToRemove;
 }*/
@@ -50,5 +50,5 @@ export const functions = {
     //update,
     //remove
 }
-export default functions;
 
+export default functions;

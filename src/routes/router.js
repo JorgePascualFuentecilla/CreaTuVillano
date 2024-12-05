@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import modeloApiRouter from './modeloApiRouter.js';
+import villanosApiRouter from './villanosApiRouter.js';
+import monstruosApiRouter from './monstruosApiRouter.js';
 
 const router = Router();
 
-router.use('/villanos', modeloApiRouter);
+router.use('/villanos', villanosApiRouter);
+router.use('/monstruos', monstruosApiRouter);
 
 export default router;

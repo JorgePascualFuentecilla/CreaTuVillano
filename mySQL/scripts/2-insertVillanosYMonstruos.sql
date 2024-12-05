@@ -97,7 +97,7 @@ VALUES
 ('Conejo Rave'),
 ('Foca Risueña');
 
---100 villanos
+-- 100 villanos
 INSERT INTO `adoptaTuMonstruo`.`villanos` (`nombreVillanos`, `tituloVillanos`, `monstruos_idmonstruos`)
 VALUES 
 ('Don Calzón', 'El Amo de la Intimidación', 1),
@@ -194,9 +194,4 @@ VALUES
 ('Tiburón Espía', 'El Vigilante Oceánico', 92),
 ('Serpiente Melodiosa', 'El Hipnotizador de Tonos', 93),
 ('Conejo del Rave', 'El Saltarín del Ritmo', 94),
-('Foca Risueña', 'El Guardián de la Felicidad', 95),
-('Rana Saltarina', 'El Explorador Interdimensional', 96),
-('Pez Dragón', 'El Terror de los Ríos', 97),
-('Morsa Luchadora', 'El Azote de los Glaciares', 98),
-('Cerdo Mágico', 'El Hechicero del Corral', 99),
-('Dragón Nebuloso', 'El Señor de la Bruma', 100);
+('Foca Risueña', 'El Guardián de la Felicidad', 95);
