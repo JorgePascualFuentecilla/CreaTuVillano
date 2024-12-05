@@ -15,7 +15,7 @@ DROP SCHEMA IF EXISTS `adoptaTuMonstruo` ;
 -- -----------------------------------------------------
 -- Schema adoptaTuMonstruo
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `adoptaTuMonstruo` ;
+CREATE SCHEMA IF NOT EXISTS `adoptaTuMonstruo` DEFAULT CHARACTER SET utf8mb3;
 USE `adoptaTuMonstruo` ;
 
 -- -----------------------------------------------------
@@ -29,7 +29,8 @@ CREATE TABLE IF NOT EXISTS `adoptaTuMonstruo`.`monstruos` (
   PRIMARY KEY (`idMonstruos`),
   UNIQUE INDEX `nombreMonstruos_UNIQUE` (`nombreMonstruos` ASC) VISIBLE,
   UNIQUE INDEX `idMonstruos_UNIQUE` (`idMonstruos` ASC) VISIBLE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET utf8mb3;
 
 
 -- -----------------------------------------------------
@@ -52,7 +53,8 @@ CREATE TABLE IF NOT EXISTS `adoptaTuMonstruo`.`villanos` (
     REFERENCES `adoptaTuMonstruo`.`monstruos` (`idMonstruos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET utf8mb3;
 
 
 -- -----------------------------------------------------
@@ -66,7 +68,8 @@ CREATE TABLE IF NOT EXISTS `adoptaTuMonstruo`.`poderes` (
   PRIMARY KEY (`idPoderes`),
   UNIQUE INDEX `idpoderes_UNIQUE` (`idPoderes` ASC) VISIBLE,
   UNIQUE INDEX `nombrePoderes_UNIQUE` (`nombrePoderes` ASC) VISIBLE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET utf8mb3;
 
 
 -- -----------------------------------------------------
@@ -90,7 +93,8 @@ CREATE TABLE IF NOT EXISTS `adoptaTuMonstruo`.`poderesMonstruos` (
     REFERENCES `adoptaTuMonstruo`.`poderes` (`idPoderes`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET utf8mb3;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
