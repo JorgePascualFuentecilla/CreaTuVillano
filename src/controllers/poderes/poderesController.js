@@ -1,11 +1,11 @@
-import poderes from '../../models/poderes.js';
-import error from '../../helpers/errors.js';
+import { Poder } from "../../models/index.js";
+
 async function getAll() {
-    const users = await poderes.findAll()
+    const users = await Poder.findAll()
     return users;
 }
 async function getById(id) {
-    const user = await poderes.findByPk(id);
+    const user = await Poder.findByPk(id);
     return user;
 }
 

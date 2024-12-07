@@ -1,11 +1,14 @@
-import monstruos from '../../models/monstruos.js';
-import error from '../../helpers/errors.js';
+import { Monstruo,Poder } from '../../models/index.js';
+const includes = {include: {
+    model: Poder, // Incluir el modelo Poder
+    through: { attributes: [] }, // Excluir la tabla intermedia
+  }}
 async function getAll() {
-    const users = await monstruos.findAll()
+    const users = await Monstruo.findAll(includes)
     return users;
 }
 async function getById(id) {
-    const user = await monstruos.findByPk(id);
+    const user = await Monstruo.findByPk(id,includes);
     return user;
 }
 
