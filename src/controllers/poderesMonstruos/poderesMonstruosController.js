@@ -13,18 +13,24 @@ export async function asignarPoderes(req, res) {
         const monstruoIds = monstruos.map(m => m.idMonstruos);
         const poderIds = poderes.map(p => p.idPoderes);
 
-        // Por hacer, esto ha de asignar mas de un poder aleatorio: const numAssignments = req.query.num || 100;
-        // Generar asignaciones aleatorias
-        const assignments = [];
-        for (let i = 1; i < monstruoIds.length; i++) {
-            const monstruoId = monstruoIds[i];
+        // Número de asignaciones que quieres realizar
+        const numAssignments = req.query.num || 100;
 
+        // Generar asignaciones aleatorias
+        let createdCount = 0;
+        for (let i = 0; i < numAssignments; i++) {
+            const monstruoId = monstruoIds[Math.floor(Math.random() * monstruoIds.length)];
             const poderId = poderIds[Math.floor(Math.random() * poderIds.length)];
-            assignments.push({ monstruos_idMonstruos: monstruoId, poderes_idPoderes: poderId });
+
+            // Usar findOrCreate para evitar duplicados
+            const [relation, created] = await PoderesMonstruos.findOrCreate({
+                where: { monstruos_idMonstruos: monstruoId, poderes_idPoderes: poderId },
+            });
+
+            if (created) createdCount++;
         }
-        // Insertar asignaciones
-        await PoderesMonstruos.bulkCreate(assignments);
-        res.json({ message: `¡Se insertaron ${assignments.length} relaciones!` });
+
+        res.json({ message: `¡Se insertaron ${createdCount} nuevas relaciones!` });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Error al asignar poderes." });
