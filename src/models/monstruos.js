@@ -12,5 +12,9 @@ export default (sequelize) => {
       allowNull: false,
       unique: true,
     },
+    idVillanoMonstruo: {
+      type: DataTypes.INTEGER.UNSIGNED,
+    }
+
   });
 };

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 
-const Villanos = sequelize.define("villanos", {
+const Villanos = sequelize.define("Villanos", {
 
     idVillanos: {
         type: DataTypes.INTEGER.UNSIGNED,
