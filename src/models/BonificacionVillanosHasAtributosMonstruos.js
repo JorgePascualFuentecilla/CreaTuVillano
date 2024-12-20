@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
-const BonificacionVillanos = require('./BonificacionVillanos');
-const AtributosMonstruos = require('./AtributosMonstruos');
+const { DataTypes } = import('sequelize');
+const sequelize = import('../database');
+const BonificacionVillanos = import('./BonificacionVillanos');
+const AtributosMonstruos = import('./AtributosMonstruos');
 
 const BonificacionVillanosHasAtributosMonstruos = sequelize.define('BonificacionVillanosHasAtributosMonstruos', {
   BonificacionVillanos_idBonificacionVillanos: {

@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
-const AtributosMonstruos = require('./AtributosMonstruos');
-const Monstruos = require('./Monstruos');
+const { DataTypes } = import('sequelize');
+const sequelize = import('../database');
+const AtributosMonstruos = import('./AtributosMonstruos');
+const Monstruos = import('./Monstruos');
 
 const AtributosMonstruosHasMonstruos = sequelize.define('AtributosMonstruosHasMonstruos', {
   AtributosMonstruos_idAtributo: {

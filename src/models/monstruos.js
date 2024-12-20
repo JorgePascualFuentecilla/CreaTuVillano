@@ -1,6 +1,6 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
-const Villanos = require('./Villanos');
+const { DataTypes } = import('sequelize');
+const sequelize = import('../database');
+const Villanos = import('./Villanos');
 
 const Monstruos = sequelize.define('Monstruos', {
   idMonstruos: {

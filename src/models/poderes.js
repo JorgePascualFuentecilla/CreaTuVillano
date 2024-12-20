@@ -14,9 +14,9 @@ export default (sequelize) => {
     },
   });
 };
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
-const Monstruos = require('./Monstruos');
+const { DataTypes } = import('sequelize');
+const sequelize = import('../database');
+const Monstruos = import('./Monstruos');
 
 const Poderes = sequelize.define('Poderes', {
   idPoderes: {

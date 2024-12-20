@@ -1,13 +1,13 @@
-const { Sequelize } = require('sequelize');
-const sequelize = require('../database');
+const { Sequelize } = import('sequelize');
+const sequelize = import('../database');
 
-const Villanos = require('./Villanos');
-const Monstruos = require('./Monstruos');
-const AtributosMonstruos = require('./AtributosMonstruos');
-const BonificacionVillanos = require('./BonificacionVillanos');
-const Poderes = require('./Poderes');
-const AtributosMonstruosHasMonstruos = require('./AtributosMonstruosHasMonstruos');
-const BonificacionVillanosHasAtributosMonstruos = require('./BonificacionVillanosHasAtributosMonstruos');
+const Villanos = import('./Villanos');
+const Monstruos = import('./Monstruos');
+const AtributosMonstruos = import('./AtributosMonstruos');
+const BonificacionVillanos = import('./BonificacionVillanos');
+const Poderes = import('./Poderes');
+const AtributosMonstruosHasMonstruos = import('./AtributosMonstruosHasMonstruos');
+const BonificacionVillanosHasAtributosMonstruos = import('./BonificacionVillanosHasAtributosMonstruos');
 
 
 Villanos.hasMany(Monstruos, { foreignKey: 'idVillanoMonstruo' });
