@@ -1,25 +1,20 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
 
-const Villanos = sequelize.define('Villanos', {
-  idVillanos: {
+const AtributosMonstruos = sequelize.define('AtributosMonstruos', {
+  idAtributo: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
   Nombre: {
-    type: DataTypes.STRING(200),
-    unique: true,
-    allowNull: false
-  },
-  Titulo: {
-    type: DataTypes.STRING(200),
+    type: DataTypes.STRING(45),
     unique: true,
     allowNull: false
   }
 }, {
-  tableName: 'Villanos',
+  tableName: 'AtributosMonstruos',
   timestamps: false
 });
 
-module.exports = Villanos;
+module.exports = AtributosMonstruos;

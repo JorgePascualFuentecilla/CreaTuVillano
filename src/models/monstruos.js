@@ -1,20 +1,28 @@
-import { DataTypes } from 'sequelize';
+const { DataTypes } = require('sequelize');
+const sequelize = require('../database');
+const Villanos = require('./Villanos');
 
-export default (sequelize) => {
-  return sequelize.define('monstruos', {
-    idMonstruos: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-    nombreMonstruos: {
-      type: DataTypes.STRING(200),
-      allowNull: false,
-      unique: true,
-    },
-    idVillanoMonstruo: {
-      type: DataTypes.INTEGER.UNSIGNED,
+const Monstruos = sequelize.define('Monstruos', {
+  idMonstruos: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  Nombre: {
+    type: DataTypes.STRING(200),
+    unique: true,
+    allowNull: false
+  },
+  idVillanoMonstruo: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Villanos,
+      key: 'idVillanos'
     }
+  }
+}, {
+  tableName: 'Monstruos',
+  timestamps: false
+});
 
-  });
-};
+module.exports = Monstruos;

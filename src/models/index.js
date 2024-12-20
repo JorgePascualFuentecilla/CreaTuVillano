@@ -1,22 +1,50 @@
-import sequelize from '../config/db.js';
-import MonstruoModel from './monstruos.js';
-import PoderModel from './poderes.js';
-import PoderesMonstruosModel from './poderesMonstruos.js';
+const Villanos = require('./Villanos');
+const Monstruos = require('./Monstruos');
+const AtributosMonstruos = require('./AtributosMonstruos');
+const BonificacionVillanos = require('./BonificacionVillanos');
+const Poderes = require('./Poderes');
+const AtributosMonstruosHasMonstruos = require('./AtributosMonstruosHasMonstruos');
+const BonificacionVillanosHasAtributosMonstruos = require('./BonificacionVillanosHasAtributosMonstruos');
 
 
-// Modelos
-export const Monstruo = MonstruoModel(sequelize);
-export const Poder = PoderModel(sequelize);
-export const PoderesMonstruos = PoderesMonstruosModel(sequelize);
+Villanos.hasMany(Monstruos, { foreignKey: 'idVillanoMonstruo' });
+Monstruos.belongsTo(Villanos, { foreignKey: 'idVillanoMonstruo' });
 
-// Relaciones
-Monstruo.belongsToMany(Poder, {
-  through: PoderesMonstruos,
-  foreignKey: 'monstruos_idMonstruos',
+Monstruos.hasMany(Poderes, { foreignKey: 'Monstruos_idMonstruos' });
+Poderes.belongsTo(Monstruos, { foreignKey: 'Monstruos_idMonstruos' });
+
+
+AtributosMonstruos.belongsToMany(Monstruos, {
+  through: AtributosMonstruosHasMonstruos,
+  foreignKey: 'AtributosMonstruos_idAtributo',
 });
-Poder.belongsToMany(Monstruo, {
-  through: PoderesMonstruos,
-  foreignKey: 'poderes_idPoderes',
+Monstruos.belongsToMany(AtributosMonstruos, {
+  through: AtributosMonstruosHasMonstruos,
+  foreignKey: 'Monstruos_idMonstruos',
 });
 
-export default sequelize;
+
+Villanos.hasMany(BonificacionVillanos, { foreignKey: 'Villanos_idVillanos' });
+BonificacionVillanos.belongsTo(Villanos, { foreignKey: 'Villanos_idVillanos' });
+
+
+BonificacionVillanos.belongsToMany(AtributosMonstruos, {
+  through: BonificacionVillanosHasAtributosMonstruos,
+  foreignKey: 'BonificacionVillanos_idBonificacionVillanos',
+  otherKey: 'AtributosMonstruos_idAtributo',
+});
+AtributosMonstruos.belongsToMany(BonificacionVillanos, {
+  through: BonificacionVillanosHasAtributosMonstruos,
+  foreignKey: 'AtributosMonstruos_idAtributo',
+  otherKey: 'BonificacionVillanos_idBonificacionVillanos',
+});
+
+module.exports = {
+  Villanos,
+  Monstruos,
+  AtributosMonstruos,
+  BonificacionVillanos,
+  Poderes,
+  AtributosMonstruosHasMonstruos,
+  BonificacionVillanosHasAtributosMonstruos,
+};
