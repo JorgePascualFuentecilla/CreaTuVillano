@@ -1,3 +1,6 @@
+const { Sequelize } = require('sequelize');
+const sequelize = require('../database');
+
 const Villanos = require('./Villanos');
 const Monstruos = require('./Monstruos');
 const AtributosMonstruos = require('./AtributosMonstruos');
