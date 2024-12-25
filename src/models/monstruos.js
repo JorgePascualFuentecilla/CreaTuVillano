@@ -1,6 +1,6 @@
-const { DataTypes } = import('sequelize');
-const sequelize = import('../database');
-const Villanos = import('./Villanos');
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/db.js';
+import Villanos from './Villanos.js';
 
 const Monstruos = sequelize.define('Monstruos', {
   idMonstruos: {
@@ -25,4 +25,4 @@ const Monstruos = sequelize.define('Monstruos', {
   timestamps: false
 });
 
-module.exports = Monstruos;
+export default Monstruos;

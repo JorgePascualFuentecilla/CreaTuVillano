@@ -1,20 +1,24 @@
-const { DataTypes } = import('sequelize');
-const sequelize = import('../database');
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/db.js';
 
-const AtributosMonstruos = sequelize.define('AtributosMonstruos', {
-  idAtributo: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
+const AtributosMonstruos = sequelize.define(
+  'AtributosMonstruos',
+  {
+    idAtributo: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    Nombre: {
+      type: DataTypes.STRING(45),
+      unique: true,
+      allowNull: false,
+    },
   },
-  Nombre: {
-    type: DataTypes.STRING(45),
-    unique: true,
-    allowNull: false
+  {
+    tableName: 'AtributosMonstruos',
+    timestamps: false,
   }
-}, {
-  tableName: 'AtributosMonstruos',
-  timestamps: false
-});
+);
 
-module.exports = AtributosMonstruos;
+export default AtributosMonstruos;

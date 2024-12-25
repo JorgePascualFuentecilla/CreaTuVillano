@@ -1,7 +1,8 @@
-const { DataTypes } = import('sequelize');
-const sequelize = import('../database');
-const BonificacionVillanos = import('./BonificacionVillanos');
-const AtributosMonstruos = import('./AtributosMonstruos');
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/db.js';
+import BonificacionVillanos from './BonificacionVillanos.js';
+import AtributosMonstruos from './AtributosMonstruos.js';
+
 
 const BonificacionVillanosHasAtributosMonstruos = sequelize.define('BonificacionVillanosHasAtributosMonstruos', {
   BonificacionVillanos_idBonificacionVillanos: {
@@ -30,4 +31,4 @@ const BonificacionVillanosHasAtributosMonstruos = sequelize.define('Bonificacion
   timestamps: false
 });
 
-module.exports = BonificacionVillanosHasAtributosMonstruos;
+export default BonificacionVillanosHasAtributosMonstruos;

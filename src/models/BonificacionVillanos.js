@@ -1,6 +1,7 @@
-const { DataTypes } = import('sequelize');
-const sequelize = import('../database');
-const Villanos = import('./Villanos');
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/db.js';
+import Villanos from './Villanos.js';
+
 
 const BonificacionVillanos = sequelize.define('BonificacionVillanos', {
   idBonificacionVillanos: {
@@ -28,4 +29,4 @@ const BonificacionVillanos = sequelize.define('BonificacionVillanos', {
   timestamps: false
 });
 
-module.exports = BonificacionVillanos;
+export default BonificacionVillanos;

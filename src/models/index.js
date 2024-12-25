@@ -1,13 +1,10 @@
-const { Sequelize } = import('sequelize');
-const sequelize = import('../database');
-
-const Villanos = import('./Villanos');
-const Monstruos = import('./Monstruos');
-const AtributosMonstruos = import('./AtributosMonstruos');
-const BonificacionVillanos = import('./BonificacionVillanos');
-const Poderes = import('./Poderes');
-const AtributosMonstruosHasMonstruos = import('./AtributosMonstruosHasMonstruos');
-const BonificacionVillanosHasAtributosMonstruos = import('./BonificacionVillanosHasAtributosMonstruos');
+import Villanos from './Villanos.js';
+import Monstruos from './Monstruos.js';
+import AtributosMonstruos from './AtributosMonstruos.js';
+import BonificacionVillanos from './BonificacionVillanos.js';
+import Poderes from './Poderes.js';
+import AtributosMonstruosHasMonstruos from './AtributosMonstruosHasMonstruos.js';
+import BonificacionVillanosHasAtributosMonstruos from './BonificacionVillanosHasAtributosMonstruos.js';
 
 
 Villanos.hasMany(Monstruos, { foreignKey: 'idVillanoMonstruo' });
@@ -15,7 +12,6 @@ Monstruos.belongsTo(Villanos, { foreignKey: 'idVillanoMonstruo' });
 
 Monstruos.hasMany(Poderes, { foreignKey: 'Monstruos_idMonstruos' });
 Poderes.belongsTo(Monstruos, { foreignKey: 'Monstruos_idMonstruos' });
-
 
 AtributosMonstruos.belongsToMany(Monstruos, {
   through: AtributosMonstruosHasMonstruos,
@@ -26,10 +22,8 @@ Monstruos.belongsToMany(AtributosMonstruos, {
   foreignKey: 'Monstruos_idMonstruos',
 });
 
-
 Villanos.hasMany(BonificacionVillanos, { foreignKey: 'Villanos_idVillanos' });
 BonificacionVillanos.belongsTo(Villanos, { foreignKey: 'Villanos_idVillanos' });
-
 
 BonificacionVillanos.belongsToMany(AtributosMonstruos, {
   through: BonificacionVillanosHasAtributosMonstruos,
@@ -42,7 +36,7 @@ AtributosMonstruos.belongsToMany(BonificacionVillanos, {
   otherKey: 'BonificacionVillanos_idBonificacionVillanos',
 });
 
-module.exports = {
+export {
   Villanos,
   Monstruos,
   AtributosMonstruos,

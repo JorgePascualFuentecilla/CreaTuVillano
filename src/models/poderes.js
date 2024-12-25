@@ -1,22 +1,6 @@
 import { DataTypes } from 'sequelize';
-
-export default (sequelize) => {
-  return sequelize.define('poderes', {
-    idPoderes: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-    nombrePoderes: {
-      type: DataTypes.STRING(200),
-      allowNull: false,
-      unique: true,
-    },
-  });
-};
-const { DataTypes } = import('sequelize');
-const sequelize = import('../database');
-const Monstruos = import('./Monstruos');
+import sequelize from '../config/db.js';
+import Monstruos from './Monstruos.js';
 
 const Poderes = sequelize.define('Poderes', {
   idPoderes: {
@@ -40,4 +24,4 @@ const Poderes = sequelize.define('Poderes', {
   timestamps: false
 });
 
-module.exports = Poderes;
+export default Poderes;
