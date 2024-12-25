@@ -1,11 +1,12 @@
 import { Router } from 'express';
-import monstruosApiController from '../controllers/monstruos/monstruosApiController.js';
+import monstruosApiController from '../controllers/monstruosApiController.js';
 
 const router = Router();
 
+// Ruta para obtener todos los monstruos
 router.get('/', monstruosApiController.getAll);
-router.get('/:id', monstruosApiController.getById);
 
-//router.post('/', monstruosApiController.createNew);
+// Ruta para obtener un monstruo por ID
+router.get('/:id', monstruosApiController.getById);
 
 export default router;

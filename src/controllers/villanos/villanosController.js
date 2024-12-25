@@ -1,5 +1,5 @@
-import monstruos from '../../models/monstruos.js';
-import villanos from '../../models/villanos.js'
+import monstruos from '../../models/Monstruos.js';
+import villanos from '../../models/Villanos.js'
 import error from '../../helpers/errors.js';
 async function getAll() {
     const users = await villanos.findAll()

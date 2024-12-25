@@ -1,5 +1,5 @@
 
-import poderesController from "./poderesController.js"
+/*import poderesController from "./poderesController.js"
 async function getAll(req, res) {
     const poderes = await poderesController.getAll()
     res.json (poderes);
@@ -18,4 +18,4 @@ export const functions = {
     getById,
    
 }
-export default functions
+export default functions*/

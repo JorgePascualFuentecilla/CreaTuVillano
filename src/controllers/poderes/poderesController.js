@@ -1,4 +1,4 @@
-import { Poder } from "../../models/index.js";
+/*import { Poder } from "../../models/index.js";
 
 async function getAll() {
     const users = await Poder.findAll()
@@ -18,4 +18,4 @@ export const functions = {
     
 }
 
-export default functions;
+export default functions;*/

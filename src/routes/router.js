@@ -9,4 +9,10 @@ router.use('/villanos', villanosApiRouter);
 router.use('/monstruos', monstruosApiRouter);
 router.use('/poderes', poderesApiRouter);
 router.use('/poderes-monstruos', poderesMonstruosRouter);
+
+router.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Error interno del servidor' });
+});
+
 export default router;

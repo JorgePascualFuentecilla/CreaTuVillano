@@ -1,21 +1,30 @@
+import monstruosController from "./monstruosController.js";
 
-import monstruosController from "./monstruosController.js"
 async function getAll(req, res) {
-    const monstruos = await monstruosController.getAll()
-    res.json (monstruos);
+    try {
+        const monstruos = await monstruosController.getAll();
+        res.json(monstruos);
+    } catch (error) {
+        console.error("Error fetching all monsters:", error);
+        res.status(500).json({ error: "An error occurred while fetching monsters." });
+    }
 }
-async function getById(req,res) {
-    const id = req.params.id;
-    const user = await monstruosController.getById(id);
-    res.json ( user);
+
+async function getById(req, res) {
+    try {
+        const id = req.params.id;
+        const monstruo = await monstruosController.getById(id);
+        if (!monstruo) {
+            return res.status(404).json({ error: "Monster not found." });
+        }
+        res.json(monstruo);
+    } catch (error) {
+        console.error(`Error fetching monster with ID ${req.params.id}:`, error);
+        res.status(500).json({ error: "An error occurred while fetching the monster." });
+    }
 }
 
-
-
-
-export const functions = {
+export default {
     getAll,
     getById,
-   
-}
-export default functions
+};
