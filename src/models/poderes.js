@@ -5,7 +5,9 @@ import Monstruos from './Monstruos.js';
 const Poderes = sequelize.define('Poderes', {
   idPoderes: {
     type: DataTypes.INTEGER,
-    primaryKey: true
+    primaryKey: true,
+    allowNull: false,
+    autoIncrement: true
   },
   NombrePoderes: {
     type: DataTypes.STRING(200),

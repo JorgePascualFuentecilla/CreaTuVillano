@@ -4,7 +4,7 @@ import AtributosMonstruos from './AtributosMonstruos.js';
 import Monstruos from './Monstruos.js';
 
 const AtributosMonstruosHasMonstruos = sequelize.define(
-  'AtributosMonstruosHasMonstruos',
+  'AtributosMonstruos_has_Monstruos',
   {
     AtributosMonstruos_idAtributo: {
       type: DataTypes.INTEGER,

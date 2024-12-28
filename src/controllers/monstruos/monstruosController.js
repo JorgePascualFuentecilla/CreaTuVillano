@@ -1,13 +1,10 @@
-import { Monstruo, Poder } from "../../models/index.js";
+import { Monstruos, Poderes, AtributosMonstruos} from "../../models/index.js";
 
+
+const includes = {include: [Poderes,AtributosMonstruos],};
 async function getAll() {
     try {
-        const monsters = await Monstruo.findAll({
-            include: {
-                model: Poder,
-                through: { attributes: [] }, // Evita incluir columnas innecesarias de la tabla intermedia
-            },
-        });
+        const monsters = await Monstruos.findAll(includes);
         return monsters;
     } catch (error) {
         console.error("Error fetching all monsters:", error);
@@ -17,12 +14,7 @@ async function getAll() {
 
 async function getById(id) {
     try {
-        const monster = await Monstruo.findByPk(id, {
-            include: {
-                model: Poder,
-                through: { attributes: [] },
-            },
-        });
+        const monster = await Monstruos.findByPk(id, includes);
         if (!monster) {
             throw new Error(`Monster with ID ${id} not found`);
         }

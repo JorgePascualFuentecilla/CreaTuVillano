@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import monstruosApiController from '../controllers/monstruosApiController.js';
+import monstruosApiController from '../controllers/monstruos/monstruosApiController.js';
 
 const router = Router();
 

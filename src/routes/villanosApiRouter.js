@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import villanosApiController from '../controllers/villanosApiController.js';
+import villanosApiController from '../controllers/villanos/villanosApiController.js';
 
 const router = Router();
 
