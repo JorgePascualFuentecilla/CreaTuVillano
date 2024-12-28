@@ -20,7 +20,7 @@ const BonificacionVillanos = sequelize.define('BonificacionVillanos', {
     unique: true,
     allowNull: false
   },
-  Bonificacion: {
+  Valor: {
     type: DataTypes.INTEGER,
     allowNull: false
   }
