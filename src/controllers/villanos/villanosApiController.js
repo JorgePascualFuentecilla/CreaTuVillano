@@ -3,10 +3,10 @@ import villanosController from "./villanosController.js";
 async function getAll(req, res) {
     try {
         const villanos = await villanosController.getAll();
-        res.status(200).json({ success: true, data: villanos });
+        res.status(200).json(villanos );
     } catch (error) {
         console.error("Error fetching all villains:", error);
-        res.status(500).json({ success: false, error: "Failed to fetch villains" });
+        res.status(500).json({error: "Failed to fetch villains" });
     }
 }
 
@@ -19,10 +19,10 @@ async function getById(req, res) {
             return res.status(404).json({ success: false, error: `Villain with ID ${id} not found` });
         }
 
-        res.status(200).json({ success: true, data: villano });
+        res.status(200).json(villano);
     } catch (error) {
         console.error(`Error fetching villain with ID ${id}:`, error);
-        res.status(500).json({ success: false, error: "Failed to fetch villain" });
+        res.status(500).json({error: "Failed to fetch villain" });
     }
 }
 
