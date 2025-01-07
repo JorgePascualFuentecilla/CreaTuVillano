@@ -1,6 +1,7 @@
 import villanosController from "./villanosController.js";
 
 async function getAll(req, res) {
+    res.set({ 'content-type': 'application/json; charset=utf-8' });
     try {
         const villanos = await villanosController.getAll();
         res.status(200).json(villanos );

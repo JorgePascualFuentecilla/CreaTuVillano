@@ -12,6 +12,8 @@ const sequelize = new Sequelize(
         dialect: process.env.DB_DIALECT,
         port: process.env.DB_PORT,
         define: {
+            charset: 'utf8',
+            collate: 'utf8_general_ci',
             timestamps: false,
             freezeTableName: true
         }

@@ -1,33 +1,33 @@
 -- Monstruos
 INSERT INTO Monstruos (Nombre, idVillanoMonstruo) VALUES
-('Fenix Ardiente', 1),
-('Yeti Congelado', 2),
-('Pantera Sombría', 3),
-('Coloso de Hierro', 4),
-('Serpiente Ácida', 5);
+('MakinaRata', 1),
+('Pitufo del Kaos', 2),
+('Mercenario Informatico', 3),
+('Caperucita Loca', 4),
+('Pika Pika (y no me puedo rascar)', 5);
 
 -- AtributosMonstruos_has_Monstruos
 INSERT INTO AtributosMonstruos_has_Monstruos (AtributosMonstruos_idAtributo, Monstruos_idMonstruos, Valor) VALUES
-(1, 1, 150), -- Fenix Ardiente
-(2, 1, 40),
-(3, 1, 20),
-(1, 2, 200), -- Yeti Congelado
-(2, 2, 35),
-(3, 2, 30),
-(1, 3, 100), -- Pantera Sombría
-(2, 3, 50),
-(3, 3, 10),
-(1, 4, 250), -- Coloso de Hierro
-(2, 4, 30),
-(3, 4, 50),
-(1, 5, 120), -- Serpiente Ácida
-(2, 5, 60),
-(3, 5, 15);
+(1, 1, 160), -- MakinaRata
+(2, 1, 45),
+(3, 1, 25),
+(1, 2, 210), -- Pitufo del Kaos
+(2, 2, 40),
+(3, 2, 35),
+(1, 3, 110), -- Mercenario Informatico
+(2, 3, 55),
+(3, 3, 15),
+(1, 4, 260), -- Caperucita Loca
+(2, 4, 35),
+(3, 4, 55),
+(1, 5, 130), -- Pika Pika (y no me puedo rascar)
+(2, 5, 65),
+(3, 5, 20);
 
 -- Poderes
 INSERT INTO Poderes (NombrePoderes, Monstruos_idMonstruos) VALUES
-('Llama Infernal', 1),
-('Tormenta Helada', 2),
-('Sombra Cortante', 3),
-('Impacto de Titanio', 4),
-('Veneno Letal', 5);
+('Tiro Ratero', 1), -- MakinaRata
+('Puño Ciclado', 2), -- Pitufo del Kaos
+('Pirateo de Puntos de Vida', 3), -- Mercenario Informatico
+('Lluvia de Plomo', 4), -- Caperucita Loca
+('Hago lo que Puedo', 5); -- Pika Pika (y no me puedo rascar)

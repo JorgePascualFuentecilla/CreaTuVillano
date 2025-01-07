@@ -1,10 +1,10 @@
 
 INSERT INTO Villanos (Nombre, Titulo) VALUES 
 ('Tiax', 'El duende de los calcetines'),
-('Vampira Alcoholica', 'Tragona Suprema'),
+('Vampira Alcoholica', 'Bebedora roja'),
 ('Gnomo Cabron', '100 veces mas cabron que tu'),
 ('Sauron', 'El Señor Oscuro'),
-('MetaDoña', 'La bruja yonqui');
+('MetaDonna', 'La bruja yonqui');
 
 INSERT INTO AtributosMonstruos (Nombre) VALUES 
 ('Ataque'),
