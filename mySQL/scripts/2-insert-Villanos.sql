@@ -1,15 +1,15 @@
 
-INSERT INTO Villanos (Nombre, Titulo) VALUES 
-('Tiax', 'El duende de los calcetines'),
-('Vampira Alcoholica', 'Bebedora roja'),
-('Gnomo Cabron', '100 veces mas cabron que tu'),
-('Sauron', 'El Señor Oscuro'),
-('MetaDonna', 'La bruja yonqui');
+INSERT INTO Villanos (idVillanos,Nombre, Titulo) VALUES 
+(1,'Tiax', 'El duende de los calcetines'),
+(2, 'Vampira Alcoholica', 'Bebedora roja'),
+(3, 'Gnomo Cabron', '100 veces mas cabron que tu'),
+(4, 'Sauron', 'El Señor Oscuro'),
+(5, 'MetaDonna', 'La bruja yonqui');
 
-INSERT INTO AtributosMonstruos (Nombre) VALUES 
-('Ataque'),
-('Defensa'),
-('Puntos de Vida');
+INSERT INTO AtributosMonstruos (idAtributo,Nombre) VALUES 
+(1,'Ataque'),
+(2,'Defensa'),
+(3,'Puntos de Vida');
 
 INSERT INTO BonificacionVillanos (NombreBonificacion, Villanos_idVillanos, AtributosMonstruos_idAtributo,Valor) VALUES
 ('Fuerza del Caos', 1,1,15), -- Tiax potencia el ataque

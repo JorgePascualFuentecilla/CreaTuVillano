@@ -37,11 +37,6 @@ CREATE TABLE `AtributosMonstruos` (
 -- Dumping data for table `AtributosMonstruos`
 --
 
-LOCK TABLES `AtributosMonstruos` WRITE;
-/*!40000 ALTER TABLE `AtributosMonstruos` DISABLE KEYS */;
-INSERT INTO `AtributosMonstruos` VALUES (1,'Ataque'),(2,'Defensa'),(3,'Puntos de Vida');
-/*!40000 ALTER TABLE `AtributosMonstruos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `AtributosMonstruos_has_Monstruos`
@@ -66,11 +61,6 @@ CREATE TABLE `AtributosMonstruos_has_Monstruos` (
 -- Dumping data for table `AtributosMonstruos_has_Monstruos`
 --
 
-LOCK TABLES `AtributosMonstruos_has_Monstruos` WRITE;
-/*!40000 ALTER TABLE `AtributosMonstruos_has_Monstruos` DISABLE KEYS */;
-INSERT INTO `AtributosMonstruos_has_Monstruos` VALUES (1,1,'150'),(1,2,'200'),(1,3,'100'),(1,4,'250'),(1,5,'120'),(2,1,'40'),(2,2,'35'),(2,3,'50'),(2,4,'30'),(2,5,'60'),(3,1,'20'),(3,2,'30'),(3,3,'10'),(3,4,'50'),(3,5,'15');
-/*!40000 ALTER TABLE `AtributosMonstruos_has_Monstruos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `BonificacionVillanos`
@@ -99,11 +89,7 @@ CREATE TABLE `BonificacionVillanos` (
 -- Dumping data for table `BonificacionVillanos`
 --
 
-LOCK TABLES `BonificacionVillanos` WRITE;
-/*!40000 ALTER TABLE `BonificacionVillanos` DISABLE KEYS */;
-INSERT INTO `BonificacionVillanos` VALUES (1,1,'Fuerza del Caos',1,15),(2,2,'Aura Glacial',2,20),(3,3,'Manto de Oscuridad',1,20),(4,4,'Placas de Acero',3,50),(5,5,'Toxina Extrema',1,20);
-/*!40000 ALTER TABLE `BonificacionVillanos` ENABLE KEYS */;
-UNLOCK TABLES;
+
 
 --
 -- Table structure for table `Monstruos`
@@ -128,11 +114,6 @@ CREATE TABLE `Monstruos` (
 -- Dumping data for table `Monstruos`
 --
 
-LOCK TABLES `Monstruos` WRITE;
-/*!40000 ALTER TABLE `Monstruos` DISABLE KEYS */;
-INSERT INTO `Monstruos` VALUES (1,'MakinaRata',1),(2,'Pitufo del Kaos',2),(3,'Mercenario Informatico',3),(4,'Caperucita Loca',4),(5,'Pika Pika (y no me puedo rascar)',5);
-/*!40000 ALTER TABLE `Monstruos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `Poderes`
@@ -157,11 +138,7 @@ CREATE TABLE `Poderes` (
 -- Dumping data for table `Poderes`
 --
 
-LOCK TABLES `Poderes` WRITE;
-/*!40000 ALTER TABLE `Poderes` DISABLE KEYS */;
-INSERT INTO `Poderes` VALUES (5,'Hago lo que Puedo',5),(4,'Lluvia de Plomo',4),(3,'Pirateo de Puntos de Vida',3),(2,'Puño Ciclado',2),(1,'Tiro Ratero',1);
-/*!40000 ALTER TABLE `Poderes` ENABLE KEYS */;
-UNLOCK TABLES;
+
 
 --
 -- Table structure for table `Villanos`
@@ -179,25 +156,3 @@ CREATE TABLE `Villanos` (
   UNIQUE KEY `Nombrel_UNIQUE` (`Nombre`),
   UNIQUE KEY `Titulo_UNIQUE` (`Titulo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Villanos`
---
-
-LOCK TABLES `Villanos` WRITE;
-/*!40000 ALTER TABLE `Villanos` DISABLE KEYS */;
-INSERT INTO `Villanos` VALUES (1,'Tiax','El duende de los calcetines'),(2,'Vampira Alcoholica','Bebedora roja'),(3,'Gnomo Cabron','100 veces mas cabron que tu'),(4,'Sauron','El Sennor Oscuro'),(5,'MetaDonna','La bruja yonqui');
-/*!40000 ALTER TABLE `Villanos` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2025-01-07  0:04:28

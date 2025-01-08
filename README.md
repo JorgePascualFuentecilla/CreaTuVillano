@@ -40,7 +40,7 @@
      APP_PORT=3001
      DB_USER=jorge
      DB_PASSWORD=1234
-     DB_NAME=adoptaTuMonstruo
+     DB_NAME=LuchadeMonstruos
      SESSION_SECRET=
      DB_DIALECT=mysql
      ```
