@@ -2,11 +2,13 @@ import express from 'express'; // framework para crear el servidor
 import dotenv from 'dotenv'; // cargar variables de entorno
 import session from 'express-session';// para crear sesiones
 import router from './routes/router.js';// importar rutas
+import cors from 'cors';
 
 dotenv.config();// cargar variables de entorno
 
 const app = express();// crear servidor 
 
+app.use(cors());
 app.set('view engine', 'pug');// configurar motor de plantillas
 app.set('src/views',  'views');// configurar directorio de plantillas
 

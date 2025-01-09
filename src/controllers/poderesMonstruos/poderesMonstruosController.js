@@ -1,4 +1,4 @@
-import { Monstruo, Poder, PoderesMonstruos } from '../../models/index.js';
+/*import { Monstruo, Poder, PoderesMonstruos } from '../../models/index.js';
 
 export async function asignarPoderes(req, res) {
     try {
@@ -35,4 +35,4 @@ export async function asignarPoderes(req, res) {
         console.error(error);
         res.status(500).json({ error: "Error al asignar poderes." });
     }
-}
+}*/

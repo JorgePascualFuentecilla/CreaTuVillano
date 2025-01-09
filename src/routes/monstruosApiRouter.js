@@ -3,9 +3,10 @@ import monstruosApiController from '../controllers/monstruos/monstruosApiControl
 
 const router = Router();
 
+// Ruta para obtener todos los monstruos
 router.get('/', monstruosApiController.getAll);
-router.get('/:id', monstruosApiController.getById);
 
-//router.post('/', monstruosApiController.createNew);
+// Ruta para obtener un monstruo por ID
+router.get('/:id', monstruosApiController.getById);
 
 export default router;

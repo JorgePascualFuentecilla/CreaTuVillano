@@ -3,9 +3,10 @@ import villanosApiController from '../controllers/villanos/villanosApiController
 
 const router = Router();
 
+// Ruta para obtener todos los villanos
 router.get('/', villanosApiController.getAll);
-router.get('/:id', villanosApiController.getById);
 
-//router.post('/', villanosApiController.createNew);
+// Ruta para obtener un villano por ID
+router.get('/:id', villanosApiController.getById);
 
 export default router;

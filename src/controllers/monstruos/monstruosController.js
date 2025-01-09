@@ -1,24 +1,31 @@
-import { Monstruo,Poder } from '../../models/index.js';
-const includes = {include: {
-    model: Poder,
-    through: { attributes: [] }, 
-  }}
+import { Monstruos, Poderes, AtributosMonstruos} from "../../models/index.js";
+
+
+const includes = {include: [Poderes,AtributosMonstruos],};
 async function getAll() {
-    const users = await Monstruo.findAll(includes)
-    return users;
+    try {
+        const monsters = await Monstruos.findAll(includes);
+        return monsters;
+    } catch (error) {
+        console.error("Error fetching all monsters:", error);
+        throw new Error("Failed to fetch all monsters");
+    }
 }
+
 async function getById(id) {
-    const user = await Monstruo.findByPk(id,includes);
-    return user;
+    try {
+        const monster = await Monstruos.findByPk(id, includes);
+        if (!monster) {
+            throw new Error(`Monster with ID ${id} not found`);
+        }
+        return monster;
+    } catch (error) {
+        console.error(`Error fetching monster with ID ${id}:`, error);
+        throw new Error("Failed to fetch monster by ID");
+    }
 }
 
-
-
-
-export const functions = {
+export default {
     getAll,
     getById,
-    
-}
-
-export default functions;
+};

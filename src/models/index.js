@@ -1,22 +1,47 @@
-import sequelize from '../config/db.js';
-import MonstruoModel from './monstruos.js';
-import PoderModel from './poderes.js';
-import PoderesMonstruosModel from './poderesMonstruos.js';
+import Villanos from './Villanos.js';
+import Monstruos from './Monstruos.js';
+import AtributosMonstruos from './AtributosMonstruos.js';
+import BonificacionVillanos from './BonificacionVillanos.js';
+import Poderes from './Poderes.js';
+import AtributosMonstruosHasMonstruos from './AtributosMonstruosHasMonstruos.js';
+import BonificacionVillanosHasAtributosMonstruos from './BonificacionVillanosHasAtributosMonstruos.js';
 
 
-// Modelos
-export const Monstruo = MonstruoModel(sequelize);
-export const Poder = PoderModel(sequelize);
-export const PoderesMonstruos = PoderesMonstruosModel(sequelize);
+Villanos.hasMany(Monstruos, { foreignKey: 'idVillanoMonstruo' });
+Monstruos.belongsTo(Villanos, { foreignKey: 'idVillanoMonstruo' });
 
-// Relaciones
-Monstruo.belongsToMany(Poder, {
-  through: PoderesMonstruos,
-  foreignKey: 'monstruos_idMonstruos',
+Monstruos.hasMany(Poderes, { foreignKey: 'Monstruos_idMonstruos' });
+Poderes.belongsTo(Monstruos, { foreignKey: 'Monstruos_idMonstruos' });
+
+AtributosMonstruos.belongsToMany(Monstruos, {
+  through: AtributosMonstruosHasMonstruos,
+  foreignKey: 'AtributosMonstruos_idAtributo',
 });
-Poder.belongsToMany(Monstruo, {
-  through: PoderesMonstruos,
-  foreignKey: 'poderes_idPoderes',
+Monstruos.belongsToMany(AtributosMonstruos, {
+  through: AtributosMonstruosHasMonstruos,
+  foreignKey: 'Monstruos_idMonstruos',
 });
 
-export default sequelize;
+Villanos.hasMany(BonificacionVillanos, { foreignKey: 'Villanos_idVillanos' });
+BonificacionVillanos.belongsTo(Villanos, { foreignKey: 'Villanos_idVillanos' });
+
+BonificacionVillanos.belongsToMany(AtributosMonstruos, {
+  through: BonificacionVillanosHasAtributosMonstruos,
+  foreignKey: 'BonificacionVillanos_idBonificacionVillanos',
+  otherKey: 'AtributosMonstruos_idAtributo',
+});
+AtributosMonstruos.belongsToMany(BonificacionVillanos, {
+  through: BonificacionVillanosHasAtributosMonstruos,
+  foreignKey: 'AtributosMonstruos_idAtributo',
+  otherKey: 'BonificacionVillanos_idBonificacionVillanos',
+});
+
+export {
+  Villanos,
+  Monstruos,
+  AtributosMonstruos,
+  BonificacionVillanos,
+  Poderes,
+  AtributosMonstruosHasMonstruos,
+  BonificacionVillanosHasAtributosMonstruos,
+};

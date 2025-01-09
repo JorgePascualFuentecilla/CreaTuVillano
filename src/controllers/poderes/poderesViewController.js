@@ -1,4 +1,4 @@
-import ModeloController from './modeloController.js';
+/*import ModeloController from './modeloController.js';
 
 const getAll = async (req, res) => {
     
@@ -13,4 +13,4 @@ const createNew = async (req, res) => {
 export default {
     getAll,
     
-}
+}*/
